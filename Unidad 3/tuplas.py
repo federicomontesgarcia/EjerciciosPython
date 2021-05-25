@@ -1,3 +1,5 @@
+#tuplas
+
 t = ('esto es una cadena', 'b', 'c', 'd', 'e')
 print(t)
 print(t[0])
@@ -24,6 +26,7 @@ t.sort()
 print(t)
 
 print("")
+
 
 
 
