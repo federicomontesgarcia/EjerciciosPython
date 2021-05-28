@@ -22,6 +22,7 @@ cafeterito = {
     }
 }
 
+#------------------------------------------------------------
 #marzo
 marzo = []
 marzoTarde = []
@@ -34,13 +35,12 @@ marzoNoche = cafeterito['marzo']['noche'].values()
 print("lista cadenas marzo tarde:",marzoTarde)
 print("")
 print("lista cadenas marzo noche:",marzoNoche)
-print("")
-print("lista cadenas marzo:",marzo)
+
 print("")
 #cuenta la cantidad de elementos dentro de la lista
 print("cantidad de sorteos realizados cafetrito tarde en marzo:",len(marzoTarde))
 print("cantidad de sorteos realizados cafetrito noche en marzo:",len(marzoNoche))
-
+print()
 for numero in marzoNoche:
     marzo.append(numero)
 
@@ -49,10 +49,33 @@ for numero in marzoTarde:
 
 print("numeros guardados en lista:",marzo)
 print("cantidad de sorteos realizados en marzo:",len(marzo))
+print()
+#obteniendo numeros sin repetir
+caidosMarzo = set(marzo)
+#print("Los números de marzo caídos en conjunto son:",caidosMarzo)
+caidosMarzo = list(caidosMarzo)
+print("Los números de marzo sin repetir caídos son:",caidosMarzo)
+print("cantidad de numeros sin repetir caidos en marzo", len(caidosMarzo))
+print()
 
-print(marzo[0])
+# numeros de 3 cifras
+marzo3C = []
+i = 0
+n = 0
+for num in marzo:
+    j = 1
+    num3 = ""
+    nuevo = marzo[i]
+    for n in nuevo:
+        if j < 4:
+            num3 = num3 + nuevo[j]  
+        j = j + 1
+    marzo3C.append(num3) 
+    i = i + 1
+print("Listado de los numeros de 3 cifras de marzo",marzo3C)
 
-#-------------------------------------------------------------------------------------
+
+#---------------------------------------------------------------------
 #abril
 
 abril = []
@@ -66,13 +89,12 @@ abrilNoche = cafeterito['abril']['noche'].values()
 print("lista cadenas abril tarde:",abrilTarde)
 print("")
 print("lista cadenas abril noche:",abrilNoche)
-print("")
-print("lista cadenas abril:",abril)
+
 print("")
 #cuenta la cantidad de elementos dentro de la lista
 print("cantidad de sorteos realizados cafetrito tarde en abril:",len(abrilTarde))
 print("cantidad de sorteos realizados cafetrito noche en abril:",len(abrilNoche))
-
+print()
 for numero in abrilNoche:
     abril.append(numero)
 
@@ -81,22 +103,43 @@ for numero in abrilTarde:
 
 print("numeros guardados en lista:",abril)
 print("cantidad de sorteos realizados en abril:",len(abril))
+print()
 
-print(abril[0])
+#obteniendo numeros sin repetir
+caidosAbril = set(abril)
+caidosAbril = list(caidosAbril)
+print("Los números de abril caídos sin repetir son:",caidosAbril)
+print("cantidad de numeros sin repetir caidos en abril", len(caidosAbril))
+print()
 
-#----------------------------------------------------------------------------------------------------------
+# numeros de 3 cifras
+abril3C = []
+i = 0
+n = 0
+for num in abril:
+    j = 1
+    num3 = ""
+    nuevo = abril[i]
+    for n in nuevo:
+        if j < 4:
+            num3 = num3 + nuevo[j]  
+        j = j + 1
+    abril3C.append(num3) 
+    i = i + 1
+print("Listado de los numeros de 3 cifras de abril",abril3C)
+print()
+#---------------------------------------------------------------------------------------------------------
+#---------------------------------------------------------------------------------------------------------
+#lista total acumulada de numeros
 
+listaTotal = []
+listaTotal = marzo3C + abril3C
+print("Lista total de numeros:",listaTotal)
 
+listaSinRepetidos = set(listaTotal)
 
-#------------------------------------------------------------------------------------
-#ejemplo de como hallar la cantidad de veces que un numero se repite
-
-original = [2,3,3,8,4,7,2,9,9,2,3,4,7,7,2,4,8,9,9]
-print("todos los numeros caidos son:",original)
-caidos = set(original)
-print("Los números caídos en conjunto son:",caidos)
-caidos = list(caidos)
-print("Los números caídos en lista son:",caidos)
+listaSinRepetidos = list(listaSinRepetidos)
+print("Los números caídos en lista son:",listaSinRepetidos)
 
 i = 0
 k = 0
@@ -104,12 +147,12 @@ num = []
 rep = []
 numRep = [num, rep]
 
-for l in range (len(caidos)):
-    num.append(caidos[i])
+for l in range (len(listaSinRepetidos)):
+    num.append(listaSinRepetidos[i])
     cant = 0
     j = 0
-    for k in range (len(original)):
-        if int(caidos[i]) == int(original[j]):
+    for k in range (len(listaTotal)):
+        if int(listaSinRepetidos[i]) == int(listaTotal[j]):
             cant = cant + 1
         j = j + 1
         
@@ -125,5 +168,32 @@ for numero in num:
     print("el numero",num[i],"se repite",rep[j],"veces")
     i = i + 1
     j = j + 1
-         
-#------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#----------------------------------------------------------------------------------
