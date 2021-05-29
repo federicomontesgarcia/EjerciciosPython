@@ -58,6 +58,3 @@ for numero in num2:
 
 par = numPar + numPar1
 print("La cantidad de números pares son:",par)
-
-print(numPar)
-print(numPar1)
