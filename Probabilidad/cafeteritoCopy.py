@@ -166,3 +166,48 @@ print()
 print("listado de numeros segundo dígito:",total1D1)
 print()
 print("listado de numeros tercer dígito:",total1D2)
+
+#--------------------------------------------------------------------
+#numeros que mas se repiten de 1 cifra
+
+def calcularNumUnicos(digito, num1Digito):
+    global total1D0 
+    global total1D1 
+    global total1D2 
+    
+
+    listaSinRepetidos = set(num1Digito)
+    print("lista de prueba",listaSinRepetidos)
+    listaSinRepetidos = list(listaSinRepetidos)
+    print()
+    print("Los números del",digito,"dígito sin repetir son:",listaSinRepetidos)
+    i = 0
+    k = 0
+    num = []
+    rep = []
+    numRep = [num, rep]
+    for l in range (len(listaSinRepetidos)):
+        num.append(listaSinRepetidos[i])
+        cant = 0
+        j = 0
+        for k in range (len(num1Digito)):
+            if int(listaSinRepetidos[i]) == int(num1Digito[j]):
+                cant = cant + 1
+            j = j + 1
+        rep.append(cant)
+        i = i + 1 
+    print()
+    print("listado de numeros sin repetir del",digito,"dígito y las veces que se repiten",numRep)
+    #Imprimir la cantidad de veces que un numero se repite 
+    i = 0
+    j = 0
+    for numero in num:
+        print("el numero",num[i],"se repite",rep[j],"veces")
+        i = i + 1
+        j = j + 1
+    
+numerosUnDigito = (calcularNumUnicos( digito = 'primer', num1Digito = total1D0 ))
+print()
+numerosUnDigito = (calcularNumUnicos( digito = 'segundo', num1Digito = total1D1 ))
+print()
+numerosUnDigito = (calcularNumUnicos( digito = 'tercero', num1Digito = total1D2 ))
