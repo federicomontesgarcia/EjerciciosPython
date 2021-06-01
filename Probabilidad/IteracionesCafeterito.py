@@ -34,6 +34,10 @@ cafeterito = {
 
 marzo3D = []
 abril3D = []
+dig0 = 0
+dig1 = 0
+dig2 = 0
+D = 0
 #------------------------------------------------------------
 #funcion convertir diccionarios en listas 
 def probabilidades(elmes, mesT, mesN, num3C):
@@ -103,14 +107,41 @@ listaTotal = marzo3D
 print("-------------------------------------------------------------------------------------------------------")
 mesProbabilidad = (probabilidades( elmes = 'abril', mesT = cafeterito['abril']['tarde'], mesN = cafeterito['abril']['noche'], num3C = 'abril3D'))
 
+listaTotal = listaTotal + abril3D
+
 #--------------------------------------------------------------------------------------------------------------------------
 print("------------------------------------------------------operaciones totales-------------------------------------------------------")
-listaTotal = listaTotal + abril3D
 print("Lista total de numeros:",listaTotal)
+
+#ordenar la lista
+swapped = True
+while swapped:
+    swapped = False
+    for i in range(len(listaTotal) - 1):
+        if listaTotal[i] > listaTotal[i + 1]:
+            swapped = True
+            listaTotal[i], listaTotal[i + 1] = listaTotal[i + 1], listaTotal[i]
+
+#print("lista de numeros totales ordenada",listaTotal)
+#-----------------------
 listaSinRepetidos = set(listaTotal)
 listaSinRepetidos = list(listaSinRepetidos)
 print()
-print("Los números sin repetir en lista son:",listaSinRepetidos)
+#ordenar la lista
+swapped = True
+while swapped:
+    swapped = False
+    for i in range(len(listaSinRepetidos) - 1):
+        if listaSinRepetidos[i] > listaSinRepetidos[i + 1]:
+            swapped = True
+            listaSinRepetidos[i], listaSinRepetidos[i + 1] = listaSinRepetidos[i + 1], listaSinRepetidos[i]
+print()
+print("lista de numeroso ordenada",listaSinRepetidos)
+#print("Los números sin repetir en lista son:",listaSinRepetidos)
+
+
+print()
+#----------------------------
 i = 0
 k = 0
 num = []
@@ -170,17 +201,30 @@ print("listado de numeros tercer dígito:",total1D2)
 #--------------------------------------------------------------------
 #numeros que mas se repiten de 1 cifra
 
-def calcularNumUnicos(digito, num1Digito):
+def calcularNumUnicos(digito, num1Digito, dig):
     global total1D0 
     global total1D1 
     global total1D2 
     
-
+    
     listaSinRepetidos = set(num1Digito)
-    print("lista de prueba",listaSinRepetidos)
     listaSinRepetidos = list(listaSinRepetidos)
     print()
     print("Los números del",digito,"dígito sin repetir son:",listaSinRepetidos)
+
+    #ordenar la lista
+    swapped = True
+    while swapped:
+        swapped = False
+        for i in range(len(listaSinRepetidos) - 1):
+            if listaSinRepetidos[i] > listaSinRepetidos[i + 1]:
+                swapped = True
+                listaSinRepetidos[i], listaSinRepetidos[i + 1] = listaSinRepetidos[i + 1], listaSinRepetidos[i]
+    print()
+    #print("lista de numeroso ordenada",listaSinRepetidos)
+        
+
+    #----------------------------
     i = 0
     k = 0
     num = []
@@ -206,8 +250,36 @@ def calcularNumUnicos(digito, num1Digito):
         i = i + 1
         j = j + 1
     
-numerosUnDigito = (calcularNumUnicos( digito = 'primer', num1Digito = total1D0 ))
+    #buscar el numero que se repite mas veces
+    global dig0
+    dig = 0
+    global dig1
+    dig = 0
+    global dig2
+    dig = 0
+
+    mayor = rep[0]
+
+    for i in range(1, len(rep)):
+       if rep [i]> mayor:
+            mayor = rep[i]
+            dig = num[i]
+    
+    dig0 = dig
+    dig1 = dig
+    dig2 = dig
+    print()
+    print("el número",dig,"es el que mas veces se repite:",mayor,"veces")
+
+    
+numerosUnDigito = (calcularNumUnicos( digito = 'primer', num1Digito = total1D0, dig = dig0 ))
+primo = dig0
 print()
-numerosUnDigito = (calcularNumUnicos( digito = 'segundo', num1Digito = total1D1 ))
+numerosUnDigito = (calcularNumUnicos( digito = 'segundo', num1Digito = total1D1, dig = dig1 ))
+secondo = dig1
 print()
-numerosUnDigito = (calcularNumUnicos( digito = 'tercero', num1Digito = total1D2 ))
+numerosUnDigito = (calcularNumUnicos( digito = 'tercero', num1Digito = total1D2, dig = dig2 ))
+terzo = dig2
+print()
+print()
+print("El numero recomendado para jugar es el:",primo,secondo,terzo)
