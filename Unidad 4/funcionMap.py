@@ -21,5 +21,7 @@ print(pow(2,3))
 numeros = [2,3,4]
 potencias = [3,2,4]
 
+potenciados = float
 potenciados = map(pow, numeros, potencias)
-print(potenciados)
+resultado = list(potenciados)
+print(resultado)
