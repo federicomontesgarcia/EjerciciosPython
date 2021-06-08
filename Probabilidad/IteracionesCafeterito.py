@@ -1,9 +1,29 @@
 cafeterito = {
+    'enero' : {
+        'tarde' : { 'enero2t':'2905', 'enero4t':'6428', 'enero5t':'8006', 'enero6t':'1374', 'enero7t':'1921', 'enero8t':'4051', 'enero9t':'0568', 'enero12t':'9529',
+        'enero13t':'3604', 'enero14t':'9793', 'enero15t':'0489', 'enero16t':'4620', 'enero18t':'4686', 'enero19t':'3712', 'enero20t':'4310', 'enero21t':'0178', 
+        'enero22t':'2883', 'enero23t':'6058', 'enero25t':'1631', 'enero26t':'6925', 'enero27t':'9397', 'enero28t':'1279', 'enero29t':'2436', 'enero30t':'4744'}, 
+
+        'noche' : { 'enero1n':'7940', 'enero2n':'6568', 'enero3n':'1996', 'enero4n':'1168', 'enero5n':'7891', 'enero6n':'5683','enero7n':'4913', 'enero8n':'5251', 
+        'enero9n':'5766', 'enero10n':'5559', 'enero11n':'7682', 'enero12n':'2535', 'enero13n':'9619', 'enero14n':'9555', 'enero15n':'8116', 'enero16n':'6569',
+        'enero17n':'6037','enero18n':'7232', 'enero19':'5529', 'enero20n':'3268', 'enero21n':'2444', 'enero22n':'7073', 'enero23n':'7907', 'enero24n':'1122',  
+        'enero25n':'2556',  'enero26n':'6849', 'enero27n':'0448', 'enero28n':'1608', 'enero29n':'7504', 'enero30n':'9012', 'mayo31n':'4992'}
+    },
+    'febrero' : {
+        'tarde' : { 'febrero1t':'3117','febrero2t':'7576','febrero3t':'3306', 'febrero4t':'5567', 'febrero5t':'1625', 'febrero6t':'2743', 'febrero8t':'6795', 'febrero9t':'8752', 'febrero10t':'1219', 'febrero11t':'3781',
+        'febrero12t':'9054', 'febrero13t':'6174', 'febrero15t':'5255', 'febrero16t':'0302', 'febrero17t':'2802', 'febrero18t':'1741', 'febrero19t':'0776', 
+        'febrero20t':'5395', 'febrero22t':'6351', 'febrero23t':'6863', 'febrero24t':'3930', 'febrero25t':'5758', 'febrero26t':'4361', 'febrero27t':'6628'}, 
+
+        'noche' : { 'febrero1n':'6406', 'febrero2n':'4675', 'febrero3n':'1646', 'febrero4n':'8162', 'febrero5n':'1047', 'febrero6n':'6198','febrero7n':'3318', 
+        'febrero8n':'4325', 'febrero9n':'1179', 'febrero10n':'8233', 'febrero11n':'7242', 'febrero12n':'2181', 'febrero13n':'8266', 'febrero14n':'3800', 
+        'febrero15n':'6041', 'febrero16n':'1824','febrero17n':'6769','febrero18n':'2775', 'febrero19n':'8618', 'febrero20n':'3744', 'febrero21n':'8979', 
+        'febrero22n':'6045', 'febrero23n':'7620', 'febrero24n':'7426', 'febrero25n':'8003',  'febrero26n':'8709', 'febrero27n':'8404', 'febrero28n':'3205'}
+    },
     'marzo' : {
         'tarde' : {'marzo1t':'4764', 'marzo2t':'9685', 'marzo3t':'5971', 'marzo4t':'6995', 'marzo5t':'9619', 'marzo6t':'6786', 'marzo8t':'3120', 'marzo9t':'4485',
         'marzo10t':'9467', 'marzo11t':'1356','marzo12t':'2825', 'marzo13t':'0302', 'marzo15t':'8414', 'marzo16t':'3562', 'marzo17t':'5285', 'marzo18t':'8009',
         'marzo19t':'5746', 'marzo20t':'8588', 'marzo23t':'6006', 'marzo24t':'5157', 'marzo25t':'6365', 'marzo26t':'4590', 'marzo27t':'3082', 'marzo29t':'0361',
-        'marzo30t':'4303', 'marzo31t':'9824'}, 
+        'marzo30t':'4303', 'marzo31t':'9824'},
 
         'noche' : { 'marzo1n':'4106', 'marzo2n':'7793', 'marzo3n':'9201', 'marzo4n':'0601', 'marzo5n':'2753', 'marzo6n':'4817','marzo7n':'1721', 'marzo8n':'8018',
         'marzo9n':'9862', 'marzo10n':'6939', 'marzo11n':'1373', 'marzo12n':'8486', 'marzo13n':'0054', 'marzo14n':'5595', 'marzo15n':'1741', 'marzo16n':'3530', 
@@ -29,12 +49,20 @@ cafeterito = {
         'mayo9n':'3452', 'mayo10n':'8516', 'mayo11n':'3788', 'mayo12n':'1098', 'mayo13n':'1005', 'mayo14n':'6390', 'mayo15n':'5627', 'mayo16n':'9801',
         'mayo17n':'2100','mayo18n':'8951', 'mayo19n':'1028', 'mayo20n':'2896', 'mayo21n':'1296', 'mayo22n':'0783', 'mayo23n':'3961', 'mayo24n':'9509',  
         'mayo25n':'0749',  'mayo26n':'1523', 'mayo27n':'9430', 'mayo28n':'5621', 'mayo29n':'5051', 'mayo30n':'5189', 'mayo31':'9044'}
-    }
+    },
+    'junio' : {
+        'tarde' : { 'junio1t':'2074', 'junio2t':'2980', 'junio3t':'0496', 'junio4t':'6017', 'junio5t':'9297', 'junio8t':'5238'}, 
+
+        'noche' : { 'junio1n':'8164', 'junio2n':'6692', 'junio3n':'6754', 'junio4n':'2239', 'junio5n':'3871', 'junio6n':'3657','junio7n':'7694'}
+    },
 }
 
+enero3D = []
+febrero3D = []
 marzo3D = []
 abril3D = []
 mayo3D = []
+junio3D = []
 dig0 = 0
 dig1 = 0
 dig2 = 0
@@ -96,17 +124,33 @@ def probabilidades(elmes, mesT, mesN, num3C):
     print("Listado de los numeros de 3 cifras de",elmes,num3C)
 
 #declaracion de variables globales
+    global enero3D
+    enero3D = num3C
+    global febrero3D
+    febrero3D = num3C
     global marzo3D
     marzo3D = num3C
     global abril3D
     abril3D = num3C
     global mayo3D
     mayo3D = num3C
+    global junio3D
+    junio3D = num3C
+
+
+#---------------------------------------------------------------------------------------------------------------    
+mesProbabilidad = (probabilidades( elmes = 'enero', mesT = cafeterito['enero']['tarde'], mesN = cafeterito['enero']['noche'], num3C = 'enero3D'))
+
+listaTotal = []
+listaTotal = enero3D
+#---------------------------------------------------------------------------------------------------------------    
+mesProbabilidad = (probabilidades( elmes = 'febrero', mesT = cafeterito['febrero']['tarde'], mesN = cafeterito['febrero']['noche'], num3C = 'febrero3D'))
+
+listaTotal = listaTotal + febrero3D
 #---------------------------------------------------------------------------------------------------------------    
 mesProbabilidad = (probabilidades( elmes = 'marzo', mesT = cafeterito['marzo']['tarde'], mesN = cafeterito['marzo']['noche'], num3C = 'marzo3D'))
 
-listaTotal = []
-listaTotal = marzo3D
+listaTotal = listaTotal + marzo3D
 
 print("-------------------------------------------------------------------------------------------------------")
 mesProbabilidad = (probabilidades( elmes = 'abril', mesT = cafeterito['abril']['tarde'], mesN = cafeterito['abril']['noche'], num3C = 'abril3D'))
@@ -118,7 +162,10 @@ mesProbabilidad = (probabilidades( elmes = 'mayo', mesT = cafeterito['mayo']['ta
 
 listaTotal = listaTotal + mayo3D
 
+print("-------------------------------------------------------------------------------------------------------")
+mesProbabilidad = (probabilidades( elmes = 'junio', mesT = cafeterito['junio']['tarde'], mesN = cafeterito['junio']['noche'], num3C = 'junio3D'))
 
+listaTotal = listaTotal + junio3D
 #--------------------------------------------------------------------------------------------------------------------------
 print("------------------------------------------------------operaciones totales-------------------------------------------------------")
 print("Lista total de numeros:",listaTotal)
