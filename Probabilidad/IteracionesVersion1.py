@@ -51,9 +51,11 @@ cafeterito = {
         'mayo25n':'0749',  'mayo26n':'1523', 'mayo27n':'9430', 'mayo28n':'5621', 'mayo29n':'5051', 'mayo30n':'5189', 'mayo31':'9044'}
     },
     'junio' : {
-        'tarde' : { 'junio1t':'2074', 'junio2t':'2980', 'junio3t':'0496', 'junio4t':'6017', 'junio5t':'9297', 'junio8t':'5238'}, 
+        'tarde' : { 'junio1t':'2074', 'junio2t':'2980', 'junio3t':'0496', 'junio4t':'6017', 'junio5t':'9297', 'junio8t':'5238', 'junio9t':'5916', 'junio10t':'4672',
+        'junio11t':'4748', 'junio12t':'2578'}, 
 
-        'noche' : { 'junio1n':'8164', 'junio2n':'6692', 'junio3n':'6754', 'junio4n':'2239', 'junio5n':'3871', 'junio6n':'3657','junio7n':'7694'}
+        'noche' : { 'junio1n':'8164', 'junio2n':'6692', 'junio3n':'6754', 'junio4n':'2239', 'junio5n':'3871', 'junio6n':'3657','junio7n':'7694','junio8n':'1390', 
+        'junio9n':'6716', 'junio10n':'9309','junio11n':'3728', 'junio12n':'3969', 'junio13n':'6020', 'junio14n':'6832'}
     },
 }
 

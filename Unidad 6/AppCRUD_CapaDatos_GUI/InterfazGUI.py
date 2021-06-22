@@ -1,6 +1,5 @@
 #Librería para interacción por consola (interfaz)
 #################################################
-
 #Librerías con las clases para construir los widgets (ventanas, botones, cambos, labels, etc)
 import tkinter as tk
 from tkinter import ttk

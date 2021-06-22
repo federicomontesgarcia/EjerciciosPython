@@ -10,5 +10,5 @@ datosDataFrame = pd.DataFrame(data)
 
 print(datosDataFrame)
 
-datosDataFrame.to_csv('/home/fedemo/Documentos/csvPython/example.csv')
+datosDataFrame.to_csv('archivos\example1.csv')
 
